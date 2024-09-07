@@ -1,14 +1,22 @@
 import React from "react";
 import Link from "next/link";
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Car } from "lucide-react";
 
 const services = [
   { name: "Basic Wash", description: "Exterior wash and dry", price: "$20" },
-  { name: "Full Detail", description: "Interior and exterior detailing", price: "$150" },
-  { name: "Paint Correction", description: "Remove scratches and swirls", price: "$250" },
+  {
+    name: "Full Detail",
+    description: "Interior and exterior detailing",
+    price: "$150",
+  },
+  {
+    name: "Paint Correction",
+    description: "Remove scratches and swirls",
+    price: "$250",
+  },
 ];
 
 export default function Services() {
@@ -23,7 +31,11 @@ export default function Services() {
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
-                <AnimatedCard key={index} service={service} delay={index * 200} />
+                <AnimatedCard
+                  key={index}
+                  service={service}
+                  delay={index * 200}
+                />
               ))}
             </div>
           </div>
@@ -37,16 +49,14 @@ export default function Services() {
 function AnimatedCard({ service, delay }) {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    rootMargin: '-100px 0px',
+    rootMargin: "-100px 0px",
   });
 
   return (
     <div
       ref={ref}
       className={`transition-all duration-700 ${
-        inView
-          ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-10'
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
