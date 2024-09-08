@@ -52,8 +52,8 @@ const Testimonials: NextPage = () => {
                                     className="border rounded-lg p-4 bg-card text-card-foreground shadow-sm"
                                 >
                                     <p className="mb-2 italic">
-                                        "&quot;{testimonial.comment}&quot;"
-                                    </p>{" "}
+                                        &ldquo;{testimonial.comment}&rdquo;
+                                    </p>
                                     <p className="font-semibold">
                                         - {testimonial.name}
                                     </p>
@@ -61,7 +61,7 @@ const Testimonials: NextPage = () => {
                             ))}
                         </div>
                         <div className="mt-8 text-center">
-                            <Button>
+                            <Button asChild>
                                 <Link href="/#schedule">
                                     Book Your Detailing
                                 </Link>
