@@ -53,7 +53,7 @@ const Testimonials: NextPage = () => {
                                 >
                                     <p className="mb-2 italic">
                                         "&quot;{testimonial.comment}&quot;"
-                                    </p>{" "} 
+                                    </p>{" "}
                                     <p className="font-semibold">
                                         - {testimonial.name}
                                     </p>
