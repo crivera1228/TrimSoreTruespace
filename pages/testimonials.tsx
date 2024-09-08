@@ -52,9 +52,8 @@ const Testimonials: NextPage = () => {
                                     className="border rounded-lg p-4 bg-card text-card-foreground shadow-sm"
                                 >
                                     <p className="mb-2 italic">
-                                        "{testimonial.comment}"
-                                    </p>{" "}
-                                    {/* Removed the &quot;Doe&quot; part */}
+                                        "&quot;{testimonial.comment}&quot;"
+                                    </p>{" "} 
                                     <p className="font-semibold">
                                         - {testimonial.name}
                                     </p>
