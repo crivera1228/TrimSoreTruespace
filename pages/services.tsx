@@ -46,12 +46,13 @@ export default function Services() {
   );
 }
 
-function AnimatedCard({ service, delay }) {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    rootMargin: "-100px 0px",
-  });
-
+interface Service {
+  name: string;
+  description: string;
+  price: string;
+}
+function AnimatedCard({ service, delay }: { service: Service; delay: number }) {
+  const [ref, inView] = useInView();
   return (
     <div
       ref={ref}
@@ -62,9 +63,15 @@ function AnimatedCard({ service, delay }) {
     >
       <Card>
         <CardHeader>
-          <CardTitle>{service.name}</CardTitle>
+          <Link href={`/services/${service.name.toLowerCase().replace(/\s/g, '-')}`}>
+            <CardTitle>
+              <Car className="w-4 h-4 mr-2" /> {/*  Using the Car icon */}
+              {service.name}
+            </CardTitle>
+          </Link>
         </CardHeader>
         <CardContent>
+          <Button variant="default">Learn More</Button>
           <p>{service.description}</p>
           <p className="font-bold mt-2">{service.price}</p>
         </CardContent>

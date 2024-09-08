@@ -108,9 +108,32 @@
   margin-left: 0.2rem;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+:root {
+  /* Light Theme */
+  --background-color: #f8f8f8;
+  --text-color: #333;
+  --primary-color: #007bff;
+}
+
+.dark-mode {
+  --background-color: #181818;
+  --text-color: #fff;
+  --primary-color: #dc3545;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+h1 {
+  color: var(--primary-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Theme */
+    --background-color: #181818;
+    --text-color: #fff;
+    --primary-color: #dc3545;
   }
 }

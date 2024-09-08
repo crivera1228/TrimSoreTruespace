@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Car, Menu, X } from "lucide-react";
 import { DarkModeToggle } from "./dark-mode-toggle";
 import { FAQ } from "./faq";
-import { Gallery } from "./gallery";
+import { Gallery } from "./Gallery";
 
 export function AutoDetailHome() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,8 +41,10 @@ export function AutoDetailHome() {
           </div>
           <div className="flex items-center">
             <DarkModeToggle />
-            <button
-              className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4 md:hidden ml-2"
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
               onClick={toggleMenu}
             >
               {isMenuOpen ? (
@@ -50,7 +52,7 @@ export function AutoDetailHome() {
               ) : (
                 <Menu className="h-6 w-6" />
               )}
-            </button>
+            </Button>
           </div>
         </div>
       </header>
@@ -70,16 +72,17 @@ export function AutoDetailHome() {
         </div>
       )}
       <main className="flex-1">
-        <section className={`w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-background transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="container px-4 md:px-6">
+        <section className={`relative w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`} style={{backgroundImage: "url('/hero-image.jpg')"}}>
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="container relative z-10 px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-white">
                 Welcome to AutoDetail Pro
               </h1>
-              <p className="max-w-[700px] text-muted-foreground md:text-xl">
+              <p className="max-w-[700px] text-white md:text-xl">
                 Professional car detailing services to keep your vehicle looking its best.
               </p>
-              <Button className="mt-4" size="lg">
+              <Button variant="gray" size="sm" className="mt-4">
                 Book Now
               </Button>
             </div>
@@ -90,22 +93,22 @@ export function AutoDetailHome() {
 
         <FAQ />
 
-        <section id="schedule" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section id="schedule" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
               Schedule Your Appointment
             </h2>
             <div className="flex justify-center">
-              <Button size="lg" className="mt-4">
+              <Button variant="gray" size="sm" className="mt-4">
                 <Calendar className="mr-2 h-4 w-4" /> Book Now
               </Button>
             </div>
           </div>
         </section>
       </main>
-      <footer className="w-full py-6 bg-background">
+      <footer className="w-full py-6 bg-gray-200">
         <div className="container px-4 md:px-6">
-          <p className="text-center text-sm text-muted-foreground">
+          <p className="text-center text-sm text-gray-600">
             © 2023 AutoDetail Pro. All rights reserved.
           </p>
         </div>
