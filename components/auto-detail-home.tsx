@@ -43,7 +43,6 @@ export function AutoDetailHome() {
             <DarkModeToggle />
             <Button
               variant="ghost"
-              size="icon"
               className="md:hidden"
               onClick={toggleMenu}
             >
@@ -82,7 +81,7 @@ export function AutoDetailHome() {
               <p className="max-w-[700px] text-white md:text-xl">
                 Professional car detailing services to keep your vehicle looking its best.
               </p>
-              <Button variant="gray" size="sm" className="mt-4">
+              <Button variant="secondary" size="sm" className="mt-4">
                 Book Now
               </Button>
             </div>
@@ -99,7 +98,7 @@ export function AutoDetailHome() {
               Schedule Your Appointment
             </h2>
             <div className="flex justify-center">
-              <Button variant="gray" size="sm" className="mt-4">
+              <Button variant="secondary" size="sm" className="mt-4">
                 <Calendar className="mr-2 h-4 w-4" /> Book Now
               </Button>
             </div>

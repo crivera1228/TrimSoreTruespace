@@ -4,7 +4,7 @@ import { GalleryItem } from './GalleryItem';
 const galleryItems = [
   { before: '/before1.jpg', after: '/after1.jpg', alt: 'Car detail before and after 1' },
   { before: '/before2.jpg', after: '/after2.jpg', alt: 'Car detail before and after 2' },
-  { before: '/before3.jpg', after: '/after3.jpg', alt: 'Car detail before and after 3' },
+  { before: '/before2.jpg', after: '/after2.jpg', alt: 'Car detail before and after 3' },
 ];
 
 export const Gallery: React.FC = () => {
